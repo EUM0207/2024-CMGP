@@ -2,7 +2,7 @@
 #pragma warning(disable:4996)
 
 
-#define PROB 2
+#define PROB 3
 
 
 
@@ -16,7 +16,7 @@
 
 void generate_matrix(int matrix[SIZE][SIZE]);	//행렬 생성
 void print_matrix01(int matrix[SIZE][SIZE]);	//행렬 한개 출력
-void print_matrix02(int matrix01[SIZE][SIZE], int matrix02[SIZE][SIZE]);		//행렬 두개 출력
+void print_matrix02(int matrix01[SIZE][SIZE], int matrix02[SIZE][SIZE]); //행렬 두개 출력
 
 void a_matrix(int a[SIZE][SIZE], int b[SIZE][SIZE], int result[SIZE][SIZE]); //덧셈
 void d_matrix(int a[SIZE][SIZE], int b[SIZE][SIZE], int result[SIZE][SIZE]); //뺄셈
@@ -38,7 +38,7 @@ int main() {
 	print_matrix02(matrix01, matrix02);
 
 	while (1) {
-		printf("\nInput Command : ");
+		printf("\nInput Command (m, a, d, r, t, e, s, 1~9, q) : ");
 		if (fgets(command, sizeof(command), stdin) != NULL) {
 			command[strcspn(command, "\n")] = '\0';
 		}
@@ -294,65 +294,299 @@ void t_matrix(int a[SIZE][SIZE], int result[SIZE][SIZE]) {
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include <windows.h>
 
-int main()
-{
-	for (int i = 0; i < 16; i++)
-	{
-		unsigned short text = i;
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), text);
-		printf("setColor (%d)\n", text);
+void setColor(WORD color) {
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+}
+
+void resetColor() {
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7); // 기본 색상
+}
+
+void findCapitalWords(char* str) {
+	int count = 0;
+	char* token = strtok(str, " ");
+	while (token != NULL) {
+		if (isupper(token[0])) {
+			setColor(12); // 빨간색 출력
+			printf("%s ", token);
+			resetColor();
+			count++;
+		}
+		else {
+			printf("%s ", token);
+		}
+		token = strtok(NULL, " ");
+	}
+	printf("\n대문자로 시작하는 단어 개수: %d\n", count);
+}
+
+void reverseSentence(char* str) {
+	int len = strlen(str);
+	for (int i = len - 1; i >= 0; i--) {
+		printf("%c", str[i]);
+	}
+	printf("\n");
+}
+
+void insertAt(char* str) {
+	int len = strlen(str);
+	for (int i = 0; i < len; i++) {
+		printf("%c", str[i]);
+		if ((i + 1) % 3 == 0) {
+			printf("@@");
+		}
+	}
+	printf("\n");
+}
+
+void reverseWords(char* str) {
+	char* token = strtok(str, " ");
+	char* words[100];
+	int count = 0;
+
+	while (token != NULL) {
+		words[count++] = token;
+		token = strtok(NULL, " ");
 	}
 
-	char command[20];
+	for (int i = count - 1; i >= 0; i--) {
+		printf("%s ", words[i]);
+	}
+	printf("\n");
+}
 
-	FILE* fp;
-	fp = fopen("data.txt", "r");
+void replaceChar(char* str, char oldChar, char newChar) {
+	for (int i = 0; str[i] != '\0'; i++) {
+		if (str[i] == oldChar) {
+			str[i] = newChar;
+		}
+	}
+	printf("%s\n", str);
+}
 
+void countWordsInLine(char* str) {
+	int count = 0;
+	char* token = strtok(str, " ");
+	while (token != NULL) {
+		count++;
+		token = strtok(NULL, " ");
+	}
+	printf("단어 개수: %d\n", count);
+}
+
+int main() {
+	char fileName[100];
+	printf("파일 이름을 입력하세요: ");
+	scanf("%s", fileName);
+
+	FILE* file = fopen(fileName, "r");
+	if (file == NULL) {
+		printf("파일을 열 수 없습니다.\n");
+		return 1;
+	}
+
+	char line[256];
+	while (fgets(line, sizeof(line), file)) {
+		printf("입력한 명령어: ");
+		char command;
+		scanf(" %c", &command);
+
+		switch (command) {
+		case 'c':
+			findCapitalWords(line);
+			break;
+		case 'd':
+			reverseSentence(line);
+			break;
+		case 'e':
+			insertAt(line);
+			break;
+		case 'f':
+			reverseWords(line);
+			break;
+		case 'g': {
+			char oldChar, newChar;
+			printf("바꿀 문자와 새 문자를 입력하세요: ");
+			scanf(" %c %c", &oldChar, &newChar);
+			replaceChar(line, oldChar, newChar);
+			break;
+		}
+		case 'h':
+			countWordsInLine(line);
+			break;
+		case 'q':
+			fclose(file);
+			return 0;
+		default:
+			printf("잘못된 명령어입니다.\n");
+		}
+	}
+
+	fclose(file);
+
+	return 0;
+}
+#elif PROB == 3
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+typedef struct {
+	int x, y, z;
+	int isEmpty;  // 삭제된 항목을 표시하기 위한 플래그
+} Point;
+
+Point list[20];
+int count = 0;
+
+float distanceFromOrigin(Point p) {
+	return sqrt(p.x * p.x + p.y * p.y + p.z * p.z);
+}
+
+void printList() {
+	printf("현재 리스트 상태 (총 %d개):\n", count);
+	int displayIndex = 20; // 출력할 때 번호를 20부터 시작
+	for (int i = 19; i >= 0; i--) { // 역순 출력
+		if (!list[i].isEmpty) {
+			float length = distanceFromOrigin(list[i]);
+			printf("%d: (%d, %d, %d) - length: %.2f\n", displayIndex, list[i].x, list[i].y, list[i].z, length);
+		}
+		else {
+			printf("%d: (빈 칸)\n", displayIndex);
+		}
+		displayIndex--; // 출력되는 번호는 20부터 시작해서 감소
+	}
+}
+
+void addPointToBottom(int x, int y, int z) {
+	if (count < 20) {
+		list[count].x = x;
+		list[count].y = y;
+		list[count].z = z;
+		list[count].isEmpty = 0; // 비어있지 않음 표시
+		count++;
+		printf("+ (%d, %d, %d) 추가됨\n", x, y, z);
+		printList();
+	}
+	else {
+		printf("리스트가 가득 찼습니다.\n");
+	}
+}
+
+void removeBottomPoint() {
+	if (count > 0) {
+		count--; // 카운트는 줄이지만 삭제된 곳은 빈 칸으로 표시
+		list[count].isEmpty = 1; // 해당 칸을 비었다고 표시
+		printf("맨 아래의 (%d, %d, %d) 삭제됨\n", list[count].x, list[count].y, list[count].z);
+		printList();
+	}
+	else {
+		printf("리스트가 비어 있습니다.\n");
+	}
+}
+
+void findFarthestPoint() {
+	if (count == 0) {
+		printf("리스트가 비어 있습니다.\n");
+		return;
+	}
+
+	int maxIndex = 0;
+	float maxDistance = distanceFromOrigin(list[0]);
+
+	for (int i = 1; i < count; i++) {
+		float dist = distanceFromOrigin(list[i]);
+		if (dist > maxDistance) {
+			maxDistance = dist;
+			maxIndex = i;
+		}
+	}
+
+	printf("가장 먼 점: (%d, %d, %d)\n", list[maxIndex].x, list[maxIndex].y, list[maxIndex].z);
+}
+
+void findClosestPoint() {
+	if (count == 0) {
+		printf("리스트가 비어 있습니다.\n");
+		return;
+	}
+
+	int minIndex = 0;
+	float minDistance = distanceFromOrigin(list[0]);
+
+	for (int i = 1; i < count; i++) {
+		float dist = distanceFromOrigin(list[i]);
+		if (dist < minDistance) {
+			minDistance = dist;
+			minIndex = i;
+		}
+	}
+
+	printf("가장 가까운 점: (%d, %d, %d)\n", list[minIndex].x, list[minIndex].y, list[minIndex].z);
+}
+
+int compare(const void* a, const void* b) {
+	Point* p1 = (Point*)a;
+	Point* p2 = (Point*)b;
+
+	float dist1 = distanceFromOrigin(*p1);
+	float dist2 = distanceFromOrigin(*p2);
+
+	return (dist1 > dist2) - (dist1 < dist2);
+}
+
+void sortPointsAsc() {
+	qsort(list, count, sizeof(Point), compare);
+	printf("원점과의 거리에 따라 오름차순으로 정렬됨\n");
+	printList();
+}
+
+void restoreOriginalList() {
+	printf("리스트가 원래 상태로 복구됨\n");
+	printList();
+}
+
+int main() {
+	char command;
 	while (1) {
-		printf("\nInput Command : ");
-		if (fgets(command, sizeof(command), stdin) != NULL) {
-			command[strcspn(command, "\n")] = '\0';
-		}
-		//--- 대문자 시작 단어 찾고 다른색으로 출력, 대문자 단어 개수를 맨 뒤에 출력
-		if (strcmp(command, "c") == 0) {
+		printf("명령어를 입력하세요 (+ x y z, - , e x y z, d, l, m, n, a, q): ");
+		scanf(" %c", &command);
 
+		if (command == '+') {
+			int x, y, z;
+			scanf("%d %d %d", &x, &y, &z);
+			addPointToBottom(x, y, z); // 맨 아래에 점 추가
 		}
-		//--- 문장을 거꾸로 출력 //--- 다시 원래 순서로 바뀜, 다음 예제부터는 다시 원래로 바뀌는 샘플은 생략했음
-		else if (strcmp(command, "d") == 0) {
-
+		else if (command == '-') {
+			removeBottomPoint(); // 맨 아래에서 삭제
 		}
-		//--- 3글자 뒤에 @ 2개를 삽입함.
-		else if (strcmp(command, "e") == 0) {
-
+		else if (command == 'd') {
+			removeBottomPoint(); // 맨 아래에서 삭제
 		}
-		//--- 공백 기준으로 단어들을 거꾸로 출력하기
-		else if (strcmp(command, "f") == 0) {
-
+		else if (command == 'l') {
+			printf("리스트 길이: %d\n", count); // 리스트의 길이 출력
 		}
-		//--- i를 K로 바꾸기 (입력 방법은 변경해도 무관)
-		else if (strcmp(command, "g") == 0) {
-
+		else if (command == 'm') {
+			findFarthestPoint(); // 가장 먼 점 찾기
 		}
-		//--- 각 줄의 단어의 개수 출력
-		else if (strcmp(command, "h") == 0) {
-
-		} 
-		//--- 단어 개수에 따라 오름차순, 내림차순 원래대로 순서를 바꿔 출력
-		else if (strcmp(command, "r") == 0) {
-
+		else if (command == 'n') {
+			findClosestPoint(); // 가장 가까운 점 찾기
 		}
-		//--- 단어를 찾아 다른 색으로 출력하고 개수 출력
-		else if (strcmp(command, "s") == 0) {
-
+		else if (command == 'a') {
+			sortPointsAsc(); // 점들을 원점과의 거리 기준 오름차순 정렬
 		}
-			
+		else if (command == 'q') {
+			break; // 프로그램 종료
+		}
+		else {
+			printf("잘못된 명령어입니다.\n");
+		}
 	}
 
 	return 0;
 }
-
-#elif PROB == 3
 
 #endif
