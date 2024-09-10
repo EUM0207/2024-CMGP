@@ -1,8 +1,8 @@
 #define _CRT_SECURET_NO_WARNINGS
+#pragma warning(disable:4996)
 
 
-
-#define PROB 1
+#define PROB 2
 
 
 
@@ -291,6 +291,67 @@ void t_matrix(int a[SIZE][SIZE], int result[SIZE][SIZE]) {
 	}
 
 #elif PROB == 2
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <windows.h>
+
+int main()
+{
+	for (int i = 0; i < 16; i++)
+	{
+		unsigned short text = i;
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), text);
+		printf("setColor (%d)\n", text);
+	}
+
+	char command[20];
+
+	FILE* fp;
+	fp = fopen("data.txt", "r");
+
+	while (1) {
+		printf("\nInput Command : ");
+		if (fgets(command, sizeof(command), stdin) != NULL) {
+			command[strcspn(command, "\n")] = '\0';
+		}
+		//--- 대문자 시작 단어 찾고 다른색으로 출력, 대문자 단어 개수를 맨 뒤에 출력
+		if (strcmp(command, "c") == 0) {
+
+		}
+		//--- 문장을 거꾸로 출력 //--- 다시 원래 순서로 바뀜, 다음 예제부터는 다시 원래로 바뀌는 샘플은 생략했음
+		else if (strcmp(command, "d") == 0) {
+
+		}
+		//--- 3글자 뒤에 @ 2개를 삽입함.
+		else if (strcmp(command, "e") == 0) {
+
+		}
+		//--- 공백 기준으로 단어들을 거꾸로 출력하기
+		else if (strcmp(command, "f") == 0) {
+
+		}
+		//--- i를 K로 바꾸기 (입력 방법은 변경해도 무관)
+		else if (strcmp(command, "g") == 0) {
+
+		}
+		//--- 각 줄의 단어의 개수 출력
+		else if (strcmp(command, "h") == 0) {
+
+		} 
+		//--- 단어 개수에 따라 오름차순, 내림차순 원래대로 순서를 바꿔 출력
+		else if (strcmp(command, "r") == 0) {
+
+		}
+		//--- 단어를 찾아 다른 색으로 출력하고 개수 출력
+		else if (strcmp(command, "s") == 0) {
+
+		}
+			
+	}
+
+	return 0;
+}
 
 #elif PROB == 3
 
