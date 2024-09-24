@@ -455,7 +455,7 @@ void printList() {
 			printf("%d: (%d, %d, %d) - length: %.2f\n", displayIndex, list[i].x, list[i].y, list[i].z, length);
 		}
 		else {
-			printf("%d: (빈 칸)\n", displayIndex);
+			printf("%d: (0, 0, 0) - length: 0.00\n", displayIndex);
 		}
 		displayIndex--; // 출력되는 번호는 20부터 시작해서 감소
 	}
@@ -475,6 +475,8 @@ void addPointToBottom(int x, int y, int z) {
 		printf("리스트가 가득 찼습니다.\n");
 	}
 }
+
+
 
 void removeBottomPoint() {
 	if (count > 0) {
@@ -589,4 +591,93 @@ int main() {
 	return 0;
 }
 
+#elif PROB == 4
+#elif PROB == 5
+#elif PROB == 6
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define N 30  // 배열 크기
+
+// 배열과 장애물 초기화
+void init_grid(char grid[N][N]) {
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			grid[i][j] = '1';  // 배경을 1로 초기화
+		}
+	}
+
+	// 장애물 X를 랜덤으로 30개 생성
+	int obstacles = 30;
+	srand(time(0));
+	while (obstacles > 0) {
+		int x = rand() % N;
+		int y = rand() % N;
+		if (grid[x][y] != 'X') {
+			grid[x][y] = 'X';
+			obstacles--;
+		}
+	}
+}
+
+// 배열 출력 함수
+void print_grid(char grid[N][N], int px, int py) {
+	system("clear");  // 화면을 지움 (Linux/Mac 환경, Windows는 system("cls"))
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			if (i == px && j == py) {
+				printf("* ");  // 플레이어 위치
+			}
+			else {
+				printf("%c ", grid[i][j]);
+			}
+		}
+		printf("\n");
+	}
+}
+
+// 경로 생성 규칙에 맞게 이동
+void move(char grid[N][N], int* px, int* py, char direction) {
+	int nx = *px, ny = *py;
+
+	// 방향에 따라 좌표 업데이트
+	if (direction == 'w' && *px > 0) nx--;         // 위로 이동
+	if (direction == 's' && *px < N - 1) nx++;      // 아래로 이동
+	if (direction == 'a' && *py > 0) ny--;         // 왼쪽으로 이동
+	if (direction == 'd' && *py < N - 1) ny++;      // 오른쪽으로 이동
+
+	// 장애물이 있으면 이동 불가
+	if (grid[nx][ny] != 'X') {
+		*px = nx;
+		*py = ny;
+	}
+}
+
+int main() {
+	char grid[N][N];
+	int px = 0, py = 0;  // 플레이어 시작 위치
+
+	init_grid(grid);  // 배열 초기화
+
+	while (1) {
+		print_grid(grid, px, py);  // 배열 출력
+
+		printf("Move (w: up, a: left, s: down, d: right, q: quit): ");
+		char command = getchar();  // 키보드 입력 대기
+		getchar();  // 엔터 처리
+
+		if (command == 'q') {
+			break;  // 프로그램 종료
+		}
+
+		move(grid, &px, &py, command);  // 경로 이동
+	}
+
+	return 0;
+}
+
+
+
+#elif PROB == 7
 #endif
