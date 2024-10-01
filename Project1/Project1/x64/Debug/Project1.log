@@ -1,0 +1,147 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 중간 디렉터리(x64\Debug\)에 다른 프로젝트(Project1.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+  p01.cpp
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(280,6): error C2923: 'std::vector': 'Rectangle'은(는) '_Ty' 매개 변수에 대한 올바른 템플릿 형식 인수가 아닙니다.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(4561,24): message : 'Rectangle' 선언을 참조하십시오.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(280,6): error C2976: 'std::vector': 템플릿 인수가 너무 적습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(494,1): message : 'std::vector' 선언을 참조하십시오.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(280,24): error C2133: 'rectangles': 알 수 없는 크기입니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(280,24): error C2512: 'std::vector': 사용할 수 있는 적절한 기본 생성자가 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(494,1): message : 'std::vector' 선언을 참조하십시오.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(282,10): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(282,10): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(282,1): error C2365: 'Rectangle': 재정의: 이전 정의는 '함수'입니다.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(4561,24): message : 'Rectangle' 선언을 참조하십시오.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(282,32): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(287,6): error C2182: 'setRandomColor': 이 'void' 사용은 유효하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(287,32): error C2065: 'rect': 선언되지 않은 식별자입니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(287,38): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(288,5): error C3927: '->': 후행 반환 형식은 비함수 선언자 뒤에 올 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(288,9): error C3484: 구문 오류: 반환 형식 앞에 '->'가 필요합니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(288,10): error C3613: '->' 후 반환 형식이 없습니다('int'로 간주됨).
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(288,12): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(288,10): error C2146: 구문 오류: ';'이(가) 'r' 식별자 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(289,5): error C3927: '->': 후행 반환 형식은 비함수 선언자 뒤에 올 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(289,9): error C3484: 구문 오류: 반환 형식 앞에 '->'가 필요합니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(289,10): error C3613: '->' 후 반환 형식이 없습니다('int'로 간주됨).
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(289,12): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(289,5): error C2086: 'int rect': 재정의
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(288,5): message : 'rect' 선언을 참조하십시오.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(289,10): error C2146: 구문 오류: ';'이(가) 'g' 식별자 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(290,5): error C3927: '->': 후행 반환 형식은 비함수 선언자 뒤에 올 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(290,9): error C3484: 구문 오류: 반환 형식 앞에 '->'가 필요합니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(290,10): error C3613: '->' 후 반환 형식이 없습니다('int'로 간주됨).
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(290,12): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(290,5): error C2086: 'int rect': 재정의
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(288,5): message : 'rect' 선언을 참조하십시오.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(290,10): error C2146: 구문 오류: ';'이(가) 'b' 식별자 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(291,1): error C2059: 구문 오류: '}'
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(291,1): error C2143: 구문 오류: ';'이(가) '}' 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(294,27): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(294,27): error C2447: '{': 함수 헤더가 없습니다. 이전 스타일의 형식 목록입니까?
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(308,6): error C2182: 'mergeRectangles': 이 'void' 사용은 유효하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(308,33): error C2065: 'rect1': 선언되지 않은 식별자입니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(308,51): error C2065: 'rect2': 선언되지 않은 식별자입니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(308,58): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(309,5): error C3927: '->': 후행 반환 형식은 비함수 선언자 뒤에 올 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(309,10): error C3484: 구문 오류: 반환 형식 앞에 '->'가 필요합니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(309,11): error C3613: '->' 후 반환 형식이 없습니다('int'로 간주됨).
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(309,14): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(309,11): error C2146: 구문 오류: ';'이(가) 'x1' 식별자 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(310,5): error C3927: '->': 후행 반환 형식은 비함수 선언자 뒤에 올 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(310,10): error C3484: 구문 오류: 반환 형식 앞에 '->'가 필요합니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(310,11): error C3613: '->' 후 반환 형식이 없습니다('int'로 간주됨).
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(310,14): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(310,5): error C2086: 'int rect1': 재정의
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(309,5): message : 'rect1' 선언을 참조하십시오.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(310,11): error C2146: 구문 오류: ';'이(가) 'y1' 식별자 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(311,5): error C3927: '->': 후행 반환 형식은 비함수 선언자 뒤에 올 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(311,10): error C3484: 구문 오류: 반환 형식 앞에 '->'가 필요합니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(311,11): error C3613: '->' 후 반환 형식이 없습니다('int'로 간주됨).
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(311,14): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(311,5): error C2086: 'int rect1': 재정의
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(309,5): message : 'rect1' 선언을 참조하십시오.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(311,11): error C2146: 구문 오류: ';'이(가) 'x2' 식별자 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(312,5): error C3927: '->': 후행 반환 형식은 비함수 선언자 뒤에 올 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(312,10): error C3484: 구문 오류: 반환 형식 앞에 '->'가 필요합니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(312,11): error C3613: '->' 후 반환 형식이 없습니다('int'로 간주됨).
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(312,14): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(312,5): error C2086: 'int rect1': 재정의
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(309,5): message : 'rect1' 선언을 참조하십시오.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(312,11): error C2146: 구문 오류: ';'이(가) 'y2' 식별자 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(313,25): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(313,5): error C2374: 'setRandomColor': 재정의. 여러 번 초기화했습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(287,6): message : 'setRandomColor' 선언을 참조하십시오.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(316,5): error C3927: '->': 후행 반환 형식은 비함수 선언자 뒤에 올 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(316,15): error C3484: 구문 오류: 반환 형식 앞에 '->'가 필요합니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(316,16): error C3613: '->' 후 반환 형식이 없습니다('int'로 간주됨).
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(316,21): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(316,5): error C2371: 'rectangles': 재정의. 기본 형식이 다릅니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(280,24): message : 'rectangles' 선언을 참조하십시오.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(316,16): error C2146: 구문 오류: ';'이(가) 'erase' 식별자 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(317,1): error C2059: 구문 오류: '}'
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(317,1): error C2143: 구문 오류: ';'이(가) '}' 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(320,57): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(320,57): error C2447: '{': 함수 헤더가 없습니다. 이전 스타일의 형식 목록입니까?
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): error C2663: 'std::vector<_Ty,_Alloc>::_Unchecked_begin': 오버로드된 함수에 'this' 포인터에 대한 유효한 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1913,43): message : 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer std::vector<_Ty,_Alloc>::_Unchecked_begin(void) noexcept const'일 수 있습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): message : 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer std::vector<_Ty,_Alloc>::_Unchecked_begin(void) noexcept const': 'this' 포인터를 'std::vector'에서 'const std::vector<_Ty,_Alloc> &'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): message : 원인: 'std::vector'에서 'const std::vector<_Ty,_Alloc>'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): message : 변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1909,37): message : 또는       'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer std::vector<_Ty,_Alloc>::_Unchecked_begin(void) noexcept'
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): message : 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer std::vector<_Ty,_Alloc>::_Unchecked_begin(void) noexcept': 'this' 포인터를 'std::vector'에서 'std::vector<_Ty,_Alloc> &'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): message : 원인: 'std::vector'에서 'std::vector<_Ty,_Alloc>'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): message : 변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): message : 인수 목록 '()'을(를) 일치시키는 동안
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): error C2663: 'std::vector<_Ty,_Alloc>::_Unchecked_end': 오버로드된 함수에 'this' 포인터에 대한 유효한 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1921,43): message : 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer std::vector<_Ty,_Alloc>::_Unchecked_end(void) noexcept const'일 수 있습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): message : 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer std::vector<_Ty,_Alloc>::_Unchecked_end(void) noexcept const': 'this' 포인터를 'std::vector'에서 'const std::vector<_Ty,_Alloc> &'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): message : 원인: 'std::vector'에서 'const std::vector<_Ty,_Alloc>'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): message : 변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1917,37): message : 또는       'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer std::vector<_Ty,_Alloc>::_Unchecked_end(void) noexcept'
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): message : 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer std::vector<_Ty,_Alloc>::_Unchecked_end(void) noexcept': 'this' 포인터를 'std::vector'에서 'std::vector<_Ty,_Alloc> &'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): message : 원인: 'std::vector'에서 'std::vector<_Ty,_Alloc>'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): message : 변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,29): message : 인수 목록 '()'을(를) 일치시키는 동안
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,41): error C3536: '<begin>$L0': 초기화되기 전에 사용할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,41): error C3536: '<end>$L0': 초기화되기 전에 사용할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(329,39): error C2100: 간접 참조가 잘못되었습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(330,9): error C2660: 'glColor3f': 함수는 1개의 인수를 사용하지 않습니다.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GL\glew.h(869,23): message : 'glColor3f' 선언을 참조하십시오.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(330,9): message : 인수 목록 '()'을(를) 일치시키는 동안
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(331,9): error C2660: 'glRectf': 함수는 1개의 인수를 사용하지 않습니다.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\GL\glew.h(1088,23): message : 'glRectf' 선언을 참조하십시오.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(331,9): message : 인수 목록 '()'을(를) 일치시키는 동안
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(351,9): error C3861: 'addRandomRectangle': 식별자를 찾을 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(360,10): error C2143: 구문 오류: ';'이(가) '*' 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(360,10): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(360,1): error C2365: 'Rectangle': 재정의: 이전 정의는 '함수'입니다.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\um\wingdi.h(4561,24): message : 'Rectangle' 선언을 참조하십시오.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(360,52): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(360,52): error C2059: 구문 오류: '{'
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(360,52): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(360,52): error C2447: '{': 함수 헤더가 없습니다. 이전 스타일의 형식 목록입니까?
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): error C2663: 'std::vector<_Ty,_Alloc>::_Unchecked_begin': 오버로드된 함수에 'this' 포인터에 대한 유효한 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1913,43): message : 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer std::vector<_Ty,_Alloc>::_Unchecked_begin(void) noexcept const'일 수 있습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): message : 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer std::vector<_Ty,_Alloc>::_Unchecked_begin(void) noexcept const': 'this' 포인터를 'std::vector'에서 'const std::vector<_Ty,_Alloc> &'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): message : 원인: 'std::vector'에서 'const std::vector<_Ty,_Alloc>'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): message : 변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1909,37): message : 또는       'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer std::vector<_Ty,_Alloc>::_Unchecked_begin(void) noexcept'
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): message : 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer std::vector<_Ty,_Alloc>::_Unchecked_begin(void) noexcept': 'this' 포인터를 'std::vector'에서 'std::vector<_Ty,_Alloc> &'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): message : 원인: 'std::vector'에서 'std::vector<_Ty,_Alloc>'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): message : 변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): message : 인수 목록 '()'을(를) 일치시키는 동안
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): error C2663: 'std::vector<_Ty,_Alloc>::_Unchecked_end': 오버로드된 함수에 'this' 포인터에 대한 유효한 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1921,43): message : 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer std::vector<_Ty,_Alloc>::_Unchecked_end(void) noexcept const'일 수 있습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): message : 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::const_pointer std::vector<_Ty,_Alloc>::_Unchecked_end(void) noexcept const': 'this' 포인터를 'std::vector'에서 'const std::vector<_Ty,_Alloc> &'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): message : 원인: 'std::vector'에서 'const std::vector<_Ty,_Alloc>'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): message : 변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1917,37): message : 또는       'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer std::vector<_Ty,_Alloc>::_Unchecked_end(void) noexcept'
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): message : 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::pointer std::vector<_Ty,_Alloc>::_Unchecked_end(void) noexcept': 'this' 포인터를 'std::vector'에서 'std::vector<_Ty,_Alloc> &'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): message : 원인: 'std::vector'에서 'std::vector<_Ty,_Alloc>'(으)로 변환할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): message : 변환하려면 둘째 사용자 정의 변환 연산자 또는 생성자가 있어야 합니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,31): message : 인수 목록 '()'을(를) 일치시키는 동안
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,43): error C3536: '<begin>$L0': 초기화되기 전에 사용할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,43): error C3536: '<end>$L0': 초기화되기 전에 사용할 수 없습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(385,41): error C2100: 간접 참조가 잘못되었습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(389,21): error C2064: 항은 2개의 인수를 받아들이는 함수로 계산되지 않습니다.
+C:\Users\under\source\repos\Project1\Project1\p01.cpp(408,9): error C3861: 'moveRectangle': 식별자를 찾을 수 없습니다.
