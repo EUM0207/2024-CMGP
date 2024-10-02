@@ -1,7 +1,7 @@
 #define _CRT_SECURET_NO_WARNINGS
 
 
-#define PROB 4
+#define PROB 5
 
 #if PROB == 1
 #include <iostream>
@@ -99,17 +99,18 @@ GLvoid Keyboard(unsigned char key, int x, int y)
 }
 
 #elif PROB == 2
-#include <GL/glew.h>
-#include <GL/freeglut.h>
 #include <iostream>
+#include <gl/glew.h> //--- 필요한 헤더파일 include
+#include <gl/freeglut.h>
+#include <gl/freeglut_ext.h>
 #include <cstdlib> // for rand() and srand()
 #include <ctime>   // for time()
 
 // 사각형 좌표 및 색상 변수
-float rect1_x1 = -0.9f, rect1_y1 = -0.1f, rect1_x2 = -0.5f, rect1_y2 = 0.3f;
-float rect2_x1 = 0.1f, rect2_y1 = -0.1f, rect2_x2 = 0.5f, rect2_y2 = 0.3f;
-float rect3_x1 = -0.9f, rect3_y1 = -0.7f, rect3_x2 = -0.5f, rect3_y2 = -0.3f;
-float rect4_x1 = 0.1f, rect4_y1 = -0.7f, rect4_x2 = 0.5f, rect4_y2 = -0.3f;
+float rect1_x1 = -1.0f, rect1_y1 = -0.0f, rect1_x2 = -0.0f, rect1_y2 = 1.0f;
+float rect2_x1 = 0.0f, rect2_y1 = -0.0f, rect2_x2 = 1.0f, rect2_y2 = 1.0f;
+float rect3_x1 = -1.0f, rect3_y1 = -1.0f, rect3_x2 = -0.0f, rect3_y2 = -0.0f;
+float rect4_x1 = 0.0f, rect4_y1 = -1.0f, rect4_x2 = 1.0f, rect4_y2 = -0.0f;
 
 // 사각형 색상
 float rect1_r = 1.0f, rect1_g = 0.0f, rect1_b = 0.0f;
@@ -210,23 +211,23 @@ void mouse(int button, int state, int x, int y) {
         else if (button == GLUT_RIGHT_BUTTON) {
             // 사각형 크기 조절
             if (xpos > rect1_x1 && xpos < rect1_x2 && ypos > rect1_y1 && ypos < rect1_y2) {
-                rect1_x1 += 0.01f; rect1_y1 += 0.01f; // 사각형 축소
+                rect1_x1 += 0.01f; rect1_y1 += 0.01f; rect1_x2 -= 0.01f; rect1_y2 -= 0.01f; // 사각형 축소
             }
             else if (xpos > rect2_x1 && xpos < rect2_x2 && ypos > rect2_y1 && ypos < rect2_y2) {
-                rect2_x1 += 0.01f; rect2_y1 += 0.01f; // 사각형 축소
+                rect2_x1 += 0.01f; rect2_y1 += 0.01f; rect2_x2 -= 0.01f; rect2_y2 -= 0.01f; // 사각형 축소
             }
             else if (xpos > rect3_x1 && xpos < rect3_x2 && ypos > rect3_y1 && ypos < rect3_y2) {
-                rect3_x1 += 0.01f; rect3_y1 += 0.01f; // 사각형 축소
+                rect3_x1 += 0.01f; rect3_y1 += 0.01f; rect3_x2 -= 0.01f; rect3_y2 -= 0.01f; // 사각형 축소
             }
             else if (xpos > rect4_x1 && xpos < rect4_x2 && ypos > rect4_y1 && ypos < rect4_y2) {
-                rect4_x1 += 0.01f; rect4_y1 += 0.01f; // 사각형 축소
+                rect4_x1 += 0.01f; rect4_y1 += 0.01f; rect4_x2 -= 0.01f; rect4_y2 -= 0.01f; // 사각형 축소
             }
             else {
                 // 사각형 외부 클릭 시 크기 확대
-                rect1_x2 += 0.01f; rect1_y2 += 0.01f;
-                rect2_x2 += 0.01f; rect2_y2 += 0.01f;
-                rect3_x2 += 0.01f; rect3_y2 += 0.01f;
-                rect4_x2 += 0.01f; rect4_y2 += 0.01f;
+                rect1_x1 -= 0.01f; rect1_y1 -= 0.01f; rect1_x2 += 0.01f; rect1_y2 += 0.01f;
+                rect2_x1 -= 0.01f; rect2_y1 -= 0.01f; rect2_x2 += 0.01f; rect2_y2 += 0.01f;
+                rect3_x1 -= 0.01f; rect3_y1 -= 0.01f; rect3_x2 += 0.01f; rect3_y2 += 0.01f;
+                rect4_x1 -= 0.01f; rect4_y1 -= 0.01f; rect4_x2 += 0.01f; rect4_y2 += 0.01f;
             }
         }
     }
@@ -262,7 +263,6 @@ int main(int argc, char** argv) {
 
 #elif PROB == 3
 // 실습 3번: 사각형 이동 및 합치기
-#include <GL/glew.h>
 #include <GL/freeglut.h>
 #include <iostream>
 #include <vector>
@@ -288,18 +288,15 @@ void drawScene() {
     // 사각형 그리기
     for (const auto& rect : rectangles) {
         glColor3f(rect.r, rect.g, rect.b);
-        glBegin(GL_QUADS);
-        glVertex2f(rect.x1, rect.y1);
-        glVertex2f(rect.x2, rect.y1);
-        glVertex2f(rect.x2, rect.y2);
-        glVertex2f(rect.x1, rect.y2);
-        glEnd();
+        // glRectf 함수 사용
+        glRectf(rect.x1, rect.y1, rect.x2, rect.y2);
     }
 
     glutSwapBuffers();
 }
 
 void reshape(int w, int h) {
+    // 뷰포트 설정
     glViewport(0, 0, w, h);
 }
 
@@ -430,13 +427,9 @@ int main(int argc, char** argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
     glutInitWindowSize(800, 600);
-    glutCreateWindow("Rectangle Movement and Merging");
+    glutCreateWindow("실습 3: 사각형 이동 및 합치기");
 
-    glewExperimental = GL_TRUE;
-    if (glewInit() != GLEW_OK) {
-        std::cerr << "Unable to initialize GLEW" << std::endl;
-        exit(EXIT_FAILURE);
-    }
+    // GLEW 제거: 허용된 함수만 사용하므로 필요 없음
 
     glutDisplayFunc(drawScene);
     glutReshapeFunc(reshape);
@@ -451,8 +444,10 @@ int main(int argc, char** argv) {
 
 
 #elif PROB == 4
-#include <GL/freeglut.h>
 #include <iostream>
+#include <gl/glew.h> //--- 필요한 헤더파일 include
+#include <gl/freeglut.h>
+#include <gl/freeglut_ext.h>
 #include <vector>
 #include <cstdlib>
 #include <ctime>
@@ -538,7 +533,7 @@ void timer(int value) {
         if (square.changingSize) {
             square.size += ((float)rand() / RAND_MAX - 0.5f) * 0.02f;
             if (square.size < 0.1f) square.size = 0.1f;
-            if (square.size > 0.5f) square.size = 0.5f;
+            if (square.size > 0.9f) square.size = 0.9f;
             needRedisplay = true;
         }
 
@@ -673,6 +668,12 @@ int main(int argc, char** argv) {
 
 
 #elif PROB == 5
+#include <iostream>
+#include <gl/glew.h> //--- 필요한 헤더파일 include
+#include <gl/freeglut.h>
+#include <gl/freeglut_ext.h>
+
+
 
 #elif PROB == 6
 #endif
